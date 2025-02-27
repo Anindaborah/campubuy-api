@@ -30,10 +30,10 @@ const userSchema = new Schema({
      },
     
      batch: {
-        type: Number,
+        type: String,
         required: true
      },
-     
+
      password: {
         type: String,
         required: true,
