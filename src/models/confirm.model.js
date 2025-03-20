@@ -1,45 +1,46 @@
-import mongoose , {Schema} from "mongoose";
-const User=require("./User");
-const Product=require("./Product");
+import mongoose, { Schema } from "mongoose";
+const User = require("./User");
+const Product = require("./Product");
 
-const confirmSchema=new Schema({
+const confirmSchema = new Schema({
 
-      user:{
-         type:Schema.Types.ObjectId,
-         ref:"User"
-         },
-      confirmItems:[{
-         product:{type:Schema.Types.ObjectId,
-         ref:"Product"
-         },
-         name:{
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    },
+    confirmItems: [{
+        product: {
+            type: Schema.Types.ObjectId,
+            ref: "Product"
+        },
+        name: {
             type: String,
             required: true
-          },
-          description: {
+        },
+        description: {
             type: String,
             required: true
-          },
-          photo: {
+        },
+        photo: {
             type: String,
             required: true
-          },
-          quantity: {
+        },
+        quantity: {
             type: Number,
             required: true
-          },
-          price: {
+        },
+        price: {
             type: Number,
             required: true
-          },
-          totalPrice: {
+        },
+        totalPrice: {
             type: Number,
             required: true
-          }
-      }],
-      },
+        }
+    }],
+},
     {
-        timestamps:true,
+        timestamps: true,
     });
 
-    module.exports=mongoose.model("Confirm",confirmSchema);
+module.exports = mongoose.model("Confirm", confirmSchema);
